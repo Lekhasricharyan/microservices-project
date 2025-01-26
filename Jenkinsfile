@@ -10,7 +10,7 @@ pipeline {
         stage('push'){
             steps{
                 script{
-                    withDockerRegistry(credentialsId: 'docker-cred') {
+                    withDockerRegistry(credentialsId: 'newdocker-cred') {
                         sh 'docker push Lekhasricharyan/service:v1'
    
                     }
