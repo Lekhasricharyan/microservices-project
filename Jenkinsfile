@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t lekhasricharyan28/adservice:v1 .'
+                sh 'docker build -t lekhasricharyan28/cartservice:v1 .'
             }
         }
         stage('push'){
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh 'docker push lekhasricharyan28/adservice:v1'
+                        sh 'docker push lekhasricharyan28/cartservice:v1'
                     }
                 }
             }
